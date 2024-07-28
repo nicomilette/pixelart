@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Register/Login";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4">
+            <h2 class="text-center">Register/Login</h2>
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.Message
+                </div>
+            }
+            <form asp-action="Login" method="post">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control bg-dark text-white" id="username" name="username" placeholder="Enter username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control bg-dark text-white" id="password" name="password" placeholder="Enter password">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-secondary">Login</button>
+                </div>
+            </form>
+            <hr />
+            <form asp-action="Register" method="post">
+                <div class="mb-3">
+                    <label for="registerUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control bg-dark text-white" id="registerUsername" name="username" placeholder="Enter username">
+                </div>
+                <div class="mb-3">
+                    <label for="registerPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control bg-dark text-white" id="registerPassword" name="password" placeholder="Enter password">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

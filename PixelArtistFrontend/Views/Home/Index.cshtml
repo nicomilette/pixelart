@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var user = ViewData["User"] as PixelArtist.Models.User;
+}
+
+<div class="text-center">
+    @if (user == null)
+    {
+        <p>Not logged in</p>
+    }
+    else
+    {
+        
+    <h1 class="display-4">Welcome</h1>
+        <p>@user.Username</p>
+    }
+</div>
